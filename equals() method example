@@ -1,0 +1,11 @@
+import java.io.*;
+
+class GFG {
+    public static void main (String[] args) {
+        String s1 = "GeeksforGeeks";
+        String s2 = "GeeksforGeeks";
+
+        // Compare s1 and s2 for equality
+        System.out.println(s1.equals(s2));  
+    }
+}
