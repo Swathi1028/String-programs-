@@ -1,0 +1,18 @@
+import java.io.*;
+
+class GFG {
+    public static void main (String[] args) {
+        String str = "hello";
+        String str1 = "geeks";
+
+        System.out.println(capitalize(str));   
+        System.out.println(capitalize(str1)); 
+    }
+
+    public static String capitalize(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
+    }
+}
