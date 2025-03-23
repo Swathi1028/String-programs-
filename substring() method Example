@@ -1,0 +1,13 @@
+import java.io.*;
+
+class GFG {
+    public static void main (String[] args) {
+         String str = "geeks";
+
+        String slice1 = str.substring(2, 5); 
+        String slice2 = str.substring(3);   
+
+        System.out.println(slice1);
+        System.out.println(slice2);
+    }
+}
