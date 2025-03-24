@@ -1,0 +1,33 @@
+class GfG
+{
+    public static void main (String[] args) {
+        String s1 = "geeks";
+        
+        String s2 = s1;
+
+        // Creates a new location to store s1
+        s1 = s1 + "forgeeks";
+        
+        // s1 and s2 refers to different location
+        if(s1 == s2)
+            System.out.println("Same");
+        else
+            System.out.println("Not Same");
+
+        //  StringBuffer class          
+        StringBuffer sb1 = new StringBuffer("geeks");
+        
+        // sb2 refers to the same location as sb1
+        StringBuffer sb2 = sb1;
+        
+        // Append operation modifies the same object
+        // as it is mutable in nature
+        sb1 = sb1.append("forgeeks");
+        
+        // Both sb1 and sb2 refers to the same location
+        if(sb1 == sb2)
+            System.out.println("Same");
+        else
+            System.out.println("Not Same");
+    }
+}
