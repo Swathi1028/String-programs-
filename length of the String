@@ -1,0 +1,19 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+public class Driver{
+public static void main(String args[]){
+BufferReader read = new BufferReader((new InputStreamReader(System.in)));
+int t = Integer.parseint(read.readLine());
+while(t-- > 0){
+String str = read.readLine();
+System.out.println(new solution().lengthString(str));
+System.out.println("~");
+}
+}
+}
+class Solution{
+public static int lengthString(String str){
+          return str.length();
+    } 
+}
