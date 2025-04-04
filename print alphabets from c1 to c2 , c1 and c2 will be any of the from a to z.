@@ -1,0 +1,23 @@
+import java.io.*;
+class GfG{
+public static void alphabets(char c1, char c2){
+    for(char s=c1;s<=c2;s++){
+        System.out.print(s + " ");
+    }
+}
+public static void main(String args[])throws IOException{
+        BufferedReader read = new BufferedReader( new InputStreamReader(System.in));
+        int t = Integer.parseInt(read.readLine());
+        while( t-- > 0){
+            
+            char c1 = read.readLine().trim().charAt(0);
+            char c2 = read.readLine().trim().charAt(0);
+            
+            alphabets(c1, c2);
+            System.out.println();
+        
+System.out.println("~");
+}
+}
+}
+
