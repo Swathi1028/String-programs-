@@ -1,0 +1,26 @@
+public class RemoveArticles {
+    public static String removeArticles(String input) {
+        // Split the input string into words
+        String[] words = input.split("\\s+"); // split by whitespace
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            // Convert to lowercase to compare, but preserve original word
+            String lower = word.toLowerCase();
+            // Check if it's not an article
+            if (!lower.equals("a") && !lower.equals("an") && !lower.equals("the")) {
+                result.append(word).append(" ");
+            }
+        }
+        // Trim to remove any trailing space and return
+        return result.toString().trim();
+    }
+    public static void main(String[] args) {
+        String input = "The quick brown fox jumps over a lazy dog near an old tree";
+        String output = removeArticles(input);
+        System.out.println("Original: " + input);
+        System.out.println("Without articles: " + output);
+    }
+}
+output:
+Original: The quick brown fox jumps over a lazy dog near an old tree
+Without articles: quick brown fox jumps over lazy dog near old tree
