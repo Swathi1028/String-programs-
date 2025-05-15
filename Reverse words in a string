@@ -1,0 +1,23 @@
+import java.util.*;
+public class ReverseStringWords{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    String s1 = sc.nextLine();
+    String reverse = reverseString(s1);
+    System.out.println(reverse);
+    sc.close();
+
+    }
+    public static String reverseString(String s){
+    String[] words = s.split(" ");
+    StringBuffer rev = new StringBuffer();
+   for(int i = words.length-1;i>=0;i--){
+      rev.append(words[i]).append(" ");
+     }
+      return rev.toString().trim();
+      }
+  }
+Input:
+my favourite food is chiken
+output:
+chiken is food favourite my
