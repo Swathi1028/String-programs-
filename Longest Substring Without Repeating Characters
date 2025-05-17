@@ -1,0 +1,29 @@
+import java.util.HashSet;
+public class LongestUniqueSubstring {
+    public static String longestUniqueSubstr(String str) {
+        int start = 0, end = 0, maxLen = 0, maxStart = 0;
+        HashSet<Character> set = new HashSet<>();
+        while (end < str.length()) {
+            if (!set.contains(str.charAt(end))) {
+                set.add(str.charAt(end++));
+                if (end - start > maxLen) {
+                    maxLen = end - start;
+                    maxStart = start;
+                }
+            } else {
+                set.remove(str.charAt(start++));
+            }
+        }
+        return str.substring(maxStart, maxStart + maxLen);
+    }
+    public static void main(String[] args) {
+        String input = "abcabcbb";
+        String result = longestUniqueSubstr(input);
+        System.out.println("Input: " + input);
+        System.out.println("Longest substring without repeating characters: " + result);
+    }
+}
+
+output:
+Input: abcabcbb
+Longest substring without repeating characters: abc
