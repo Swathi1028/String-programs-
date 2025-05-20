@@ -1,0 +1,21 @@
+public class OnlyDigitsManual {
+    public static void main(String[] args) {
+        String input = "987654";
+        boolean isOnlyDigits = true;
+
+        for (char ch : input.toCharArray()) {
+            if (!Character.isDigit(ch)) {
+                isOnlyDigits = false;
+                break;
+            }
+        }
+        if (isOnlyDigits) {
+            System.out.println("The string contains only digits.");
+        } else {
+            System.out.println("The string contains non-digit characters.");
+        }
+    }
+}
+
+output:
+The string contains only digits.
