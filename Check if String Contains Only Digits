@@ -1,0 +1,16 @@
+public class OnlyDigitsCheck {
+    public static void main(String[] args) {
+        String input = "123456";
+        if (input.matches("\\d+")) {
+            System.out.println("The string contains only digits.");
+        } else {
+            System.out.println("The string contains non-digit characters.");
+        }
+    }
+}
+
+output:
+Input: 123456
+Output: The string contains only digits.
+Input: 123abc
+Output: The string contains non-digit characters.
