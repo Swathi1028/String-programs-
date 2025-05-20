@@ -1,0 +1,15 @@
+public class ReplaceCharacter {
+    public static void main(String[] args) {
+        String input = "banana";
+        char oldChar = 'a';
+        char newChar = 'o';
+        // Replace all occurrences of oldChar with newChar
+        String result = input.replace(oldChar, newChar);
+        System.out.println("Original String: " + input);
+        System.out.println("Modified String: " + result);
+    }
+}
+
+output:
+Original String: banana
+Modified String: bonono
