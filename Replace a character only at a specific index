@@ -1,0 +1,17 @@
+public class ReplaceAtIndex {
+    public static void main(String[] args) {
+        String input = "banana";
+        int index = 2; // Replace the character at this index
+        char newChar = 'z';
+        // Convert to char array to modify individual characters
+        char[] chars = input.toCharArray();
+        chars[index] = newChar;
+        String result = new String(chars);
+        System.out.println("Original String: " + input);
+        System.out.println("Modified String: " + result);
+    }
+}
+
+output:
+Original String: banana
+Modified String: bazana
