@@ -1,0 +1,29 @@
+import java.util.HashMap;
+public class WordFrequency {
+    public static void main(String[] args) {
+        String sentence = "Java is easy and Java is powerful";
+        // Convert the sentence to lowercase to count words uniformly
+        sentence = sentence.toLowerCase();
+        // Split sentence into words
+        String[] words = sentence.split("\\s+");
+        // Use HashMap to store word frequencies
+        HashMap<String, Integer> wordCount = new HashMap<>();
+        for (String word : words) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+        // Print the result
+        System.out.println("Word Frequencies:");
+        for (String word : wordCount.keySet()) {
+            System.out.println(word + ": " + wordCount.get(word));
+        }
+    }
+}
+
+
+Input: "Java is easy and Java is powerful"
+Output:
+Java: 2
+is: 2
+easy: 1
+and: 1
+powerful: 1
