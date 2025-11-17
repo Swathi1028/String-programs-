@@ -1,0 +1,33 @@
+class Solution {
+    public int numberOfSubstrings(String s) {
+       int n = s.length();
+        int[] prefixZero = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            prefixZero[i + 1] = prefixZero[i] + (s.charAt(i) == '0' ? 1 : 0);
+        }
+        int[] zeroPos = new int[prefixZero[n]];
+        int idx = 0;
+        for (int i = 0; i < n; i++)
+            if (s.charAt(i) == '0')
+                zeroPos[idx++] = i;
+        int totalZeros = idx;
+        long res = 0;
+        for (int i = 0; i < n; i++) {
+            int leftZeros = prefixZero[i];
+            int nextZero = (leftZeros == totalZeros ? n : zeroPos[leftZeros]);
+            res += nextZero - i;
+            for (int z = 1; z <= 200; z++) {
+                int needZeroIndex = leftZeros + z - 1;
+                if (needZeroIndex >= totalZeros) break;
+                int posZ = zeroPos[needZeroIndex];
+                int minJ = i + z * z + z - 1;
+                int startJ = Math.max(posZ, minJ);
+                int next = (needZeroIndex + 1 < totalZeros ? zeroPos[needZeroIndex + 1] : n);
+                if (startJ < next) {
+                    res += next - startJ;
+                }
+            }
+        }
+        return (int) res;
+    }
+}
